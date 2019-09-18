@@ -24,7 +24,7 @@ public class TimeInterceptor implements HandlerInterceptor {
 		c.set(Calendar.SECOND, 0);
 		//获取允许访问的开始时间
 		long start=c.getTimeInMillis();
-		c.set(Calendar.HOUR_OF_DAY, 23);
+		c.set(Calendar.HOUR_OF_DAY, 24);
 		//获取允许访问的结束时间
 		long end=c.getTimeInMillis();
 		long time=System.currentTimeMillis();
