@@ -24,8 +24,7 @@ import com.cy.pj.sys.service.exception.ServiceException;
 public class SysDeptServiceImpl implements SysDeptService {
 	@Autowired
 	private SysDeptDao sysDeptDao;
-	//@Autowired
-	//private SysUserDao sysUserDao;
+
 	
 	@Transactional(rollbackFor=Throwable.class)
 	@Override

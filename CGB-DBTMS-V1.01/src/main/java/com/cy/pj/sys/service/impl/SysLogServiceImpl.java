@@ -1,7 +1,6 @@
 package com.cy.pj.sys.service.impl;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -18,7 +17,6 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @Service
-@Scope("singleton")
 @Transactional
 public class SysLogServiceImpl extends BasePageService<SysLog> implements SysLogService {
 	private SysLogDao sysLogDao;
@@ -27,13 +25,12 @@ public class SysLogServiceImpl extends BasePageService<SysLog> implements SysLog
 		super(sysLogDao);
 		this.sysLogDao=sysLogDao;
 	}
-	//@Async("asyncThreadPool")
-	@Async
+	
 	@Transactional(propagation = Propagation.REQUIRES_NEW)
 	@Override
 	public void saveObject(SysLog entity) {
 		log.info("log.current.thread="+Thread.currentThread());
-	    try{Thread.sleep(5000);}catch(Exception e) {}
+	    
 		sysLogDao.insertObject(entity);
 	}
 	/**

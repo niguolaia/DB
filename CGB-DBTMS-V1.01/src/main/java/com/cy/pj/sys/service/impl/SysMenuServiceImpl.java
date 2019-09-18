@@ -3,7 +3,6 @@ import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
@@ -59,8 +58,6 @@ public class SysMenuServiceImpl implements SysMenuService {
 	}
 	@Override
 	public int saveObject(SysMenu entity) {
-		try{Thread.sleep(5000);}
-		catch(Exception e) {e.printStackTrace();}
 	    //1.验证参数有效性
 		if(entity==null)
 		throw new IllegalArgumentException("保存对象不能为空");
