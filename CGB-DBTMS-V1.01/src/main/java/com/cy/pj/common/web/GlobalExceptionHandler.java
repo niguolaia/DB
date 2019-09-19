@@ -7,7 +7,6 @@ import org.apache.shiro.authz.AuthorizationException;
 import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.cy.pj.common.vo.JsonResult;
