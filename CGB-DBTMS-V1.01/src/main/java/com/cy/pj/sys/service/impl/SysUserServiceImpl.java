@@ -40,7 +40,7 @@ public class SysUserServiceImpl
 		 this.sysUserDao=sysUserDao;
 		 this.sysUserRoleDao=sysUserRoleDao;
 	}
-	 
+		@RequiresPermissions("sys:user:add")
 	@Override
 	public int updatePassword(
 			String oldPassword, 
@@ -101,7 +101,8 @@ public class SysUserServiceImpl
 		//4.返回结果
 		return rows;
 	}
-	
+	@RequiresPermissions("sys:user:add")
+	@RequiredLog("新增用户")
 	@Override
 	public int saveObject(SysUser entity, Integer[] roleIds) {
 		//1.参数校验
